@@ -5,6 +5,8 @@ max width -- can be set, if images come in big formats, you can somehow normaliz
 size in % -- you can shrink the pictures to a given % of the original size<br>
 compression -- you can set the quality of the images<br>
 path -- you can append something on the imagefile names and/or put the in an other folder<br>
+fixed width -- can set fixed width in pixels, height will be calculated from image proportion, same for height<br>
+fixed width and height -- can set both in pixels, will result in fixed image proportion but streched picture<br>
 <br>
 
 # the gui<br>

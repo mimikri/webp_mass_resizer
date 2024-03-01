@@ -4,7 +4,7 @@ from tkinter import filedialog
 from PIL import Image
 
 
-def resize_webp_files():
+def resize_webp_files(folder_path_var, dest_folder_path_var, append_var, max_width_var, resize_percentage_var, quality_var):
     folder_path = folder_path_var.get()
     dest_folder_path = dest_folder_path_var.get()
     append_text = append_var.get()
@@ -18,20 +18,22 @@ def resize_webp_files():
                 file_path = os.path.join(root, file)
                 image = Image.open(file_path)
                 width, height = image.size
-                if max_width and width > max_width:
-                    new_width = max_width
-                    new_height = int(height * (max_width / width))
-                    image = Image.open(file_path)
-                    image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
+                
+                # Apply resize_percentage if provided
                 if resize_percentage:
                     new_width = int(width * (resize_percentage / 100))
                     new_height = int(height * (resize_percentage / 100))
-                    image = Image.open(file_path)
-                    image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
-                if quality:
-                    image.save(os.path.join(dest_folder_path, f"{os.path.splitext(file)[0]}{append_text}.webp"), quality=quality)
-                else:
-                    image.save(os.path.join(dest_folder_path, f"{os.path.splitext(file)[0]}{append_text}.webp"))
+                    image = image.resize((new_width, new_height), Image.LANCZOS)
+                    width, height = image.size  # Update width and height after resizing
+                
+                # Apply max_width if provided
+                if max_width and width > max_width:
+                    new_width = max_width
+                    new_height = int(height * (max_width / width))
+                    image = image.resize((new_width, new_height), Image.LANCZOS)
+                
+                # Save the image with the specified quality
+                image.save(os.path.join(dest_folder_path, f"{os.path.splitext(file)[0]}{append_text}.webp"), quality=quality)
 
 
 # Create GUI
@@ -72,7 +74,7 @@ Entry(root, textvariable=resize_percentage_var).grid(row=4, column=1)
 Label(root, text="Quality (optional):").grid(row=5, column=0)
 Entry(root, textvariable=quality_var).grid(row=5, column=1)
 
-Button(root, text="Resize WebP Files", command=resize_webp_files).grid(row=6, column=1)
+Button(root, text="Resize WebP Files", command=lambda: resize_webp_files(folder_path_var, dest_folder_path_var, append_var, max_width_var, resize_percentage_var, quality_var)).grid(row=6, column=1)
 # Set the column width as a percentage of the window width
 root.columnconfigure(1, weight=1)  # Set the width of column 1 to expand with the window
 

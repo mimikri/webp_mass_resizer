@@ -58,7 +58,7 @@ def resize_webp_files(folder_path_var, dest_folder_path_var, append_var, max_wid
 # Create GUI
 root = Tk()
 root.title("WebP Resizer")
-
+root.configure(padx=20, pady=20) 
 folder_path_var = StringVar()
 dest_folder_path_var = StringVar()
 append_var = StringVar()

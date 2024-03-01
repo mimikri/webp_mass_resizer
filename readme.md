@@ -1,6 +1,5 @@
 # mass webp resizer
-it can<br>
-resize webp images from a given folder<br>
+it can resize webp images from a given folder<br><br>
 max width -- can be set, if images come in big formats, you can somehow normalize them like this<br>
 size in % -- you can shrink the pictures to a given % of the original size<br>
 compression -- you can set the quality of the images<br>

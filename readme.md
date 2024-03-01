@@ -1,11 +1,34 @@
 # mass webp resizer
-it can resize webp images from a given folder<br><br>
-max width -- can be set, if images come in big formats, you can somehow normalize them like this<br>
-size in % -- you can shrink the pictures to a given % of the original size<br>
-compression -- you can set the quality of the images<br>
-path -- you can append something on the imagefile names and/or put the in an other folder<br>
-fixed width -- can set fixed width in pixels, height will be calculated from image proportion, same for height<br>
-fixed width and height -- can set both in pixels, will result in fixed image proportion but streched picture<br>
+<table>
+  <tr>
+    <th>Feature</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Max Width</td>
+    <td>Can be set to normalize images if they come in big formats</td>
+  </tr>
+  <tr>
+    <td>Size in %</td>
+    <td>Can shrink the pictures to a given percentage of the original size</td>
+  </tr>
+  <tr>
+    <td>Compression</td>
+    <td>Can set the quality of the images</td>
+  </tr>
+  <tr>
+    <td>Path</td>
+    <td>Can append something to the image file names and/or put them in another folder</td>
+  </tr>
+  <tr>
+    <td>Fixed Width</td>
+    <td>Can set a fixed width in pixels, with the height calculated from the image proportion</td>
+  </tr>
+  <tr>
+    <td>Fixed Width and Height</td>
+    <td>Can set both width and height in pixels, resulting in a fixed image proportion but stretched picture</td>
+  </tr>
+</table>
 <br>
 
 # the gui<br>
